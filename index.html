@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html lang="en">
+	<head>
+		<title>Opposites</title>
+		<meta name="keywords" content="simple, game, HTML5, canvas">
+		<meta name="author" content="Evan Shimoniak">
+		
+		<!--Standard icons-->
+		<link rel="icon" href="res/icon-16.png" type="image/png" sizes="16X16">
+		<link rel="icon" href="res/icon-32.png" type="image/png" sizes="32X32">
+		<link rel="icon" href="res/icon-64.png" type="image/png" sizes="64X64">
+		<link rel="icon" href="res/icon-128.png" type="image/png" sizes="128X128">
+
+		<!--Non-retina iPhone pre iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-57.png" sizes="57x57">
+		<!--Non-retina iPad pre iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-72.png" sizes="72x72">
+		<!--Non-retina iPad iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-76.png" sizes="76x76">
+		<!--Retina iPhone pre iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-114.png" sizes="114x114">
+		<!--Retina iPhone iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-120.png" sizes="120x120">
+		<!--Retina iPad pre iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-144.png" sizes="144x144">
+		<!--Retina iPad iOS 7-->
+		<link rel="apple-touch-icon" href="res/icon-152.png" sizes="152x152">
+
+		<!-- Win8 tile -->
+		<meta name="msapplication-TileImage" content="res/icon-144.png">
+		<meta name="msapplication-TileColor" content="#424242" />
+		<meta name="application-name" content="Opposites" />
+
+		<!-- IE11 tiles -->
+		<meta name="msapplication-square70x70logo" content="res/icon-70.png" />
+		<meta name="msapplication-square150x150logo" content="res/icon-150.png" />
+		<meta name="msapplication-square310x310logo" content="res/icon-310.png" />
+
+
+		<!--Include jQuery-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!--Include jQuery Cookie Plugin-->
+		<script src="jquery.cookie.js"></script>
+		<!--Include CSS-->
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="content" class="center">
+			<p id="score">Score: 0</p>
+			<p id="highscore">Highscore: 0</p>
+			<canvas id="cvs" width="400" height="400"></canvas>
+		</div>
+		<!--Include Render Code-->
+		<script src="render.js"></script>
+		<!--Include Game Code-->
+		<script src="game.js"></script>
+	</body>
+</html>
