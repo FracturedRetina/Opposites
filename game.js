@@ -4,7 +4,7 @@ $(document).ready(function() {
 	if ($.cookie("score") == undefined) {
 		$.cookie("score", 0, {expires: 365});
 	} else {
-		$('#highscore').text("Highscore: " + $.cookie("score"));
+		$('#highscore').text("Highscore: " + $.cookie("score").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 	}
 });
 
