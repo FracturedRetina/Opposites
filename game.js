@@ -1,7 +1,9 @@
 var score = 0;
 
 $(document).ready(function() {
+	//If player is new
 	if ($.cookie("score") == undefined) {
+		alert("Welcome! It seems that you're new here. Gameplay is simple; just click the gray ring on the spot opposite the white dot as quickly as you can.");
 		$.cookie("score", 0, {expires: 365});
 	} else {
 		$('#highscore').text("Highscore: " + $.cookie("score").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
