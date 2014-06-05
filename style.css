@@ -27,17 +27,24 @@ body, canvas {
 
 p {
 	color: white;
-	font-family:"Trebuchet MS";
+	font-family: "Trebuchet MS";
 	font-size: 24px;
 	text-align: center;
 	margin: auto;
 	display: block;
 }
 
-.red {
-	color: red;
+.scoreText {
+	font-size: 22px;
+	display: none;
+	text-align: inherit;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
-
+.red {
+	color: #f00;
+}
 .green {
-	color: green;
+	color: #0f0;
 }
