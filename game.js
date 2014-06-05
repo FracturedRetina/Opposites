@@ -20,7 +20,7 @@ $('canvas').click(function(e) {
 		+Math.pow(y - centY, 2)
 	);
 	var scoreChange;
-
+	
 	var angle = normalize(540 - (
 		Math.atan2(
 			x - centX,
@@ -42,20 +42,18 @@ $('canvas').click(function(e) {
 		var d = new Date();
 		var timeMultiplier = 1000 * (1 / (d.getTime() - drawTime));
 		
-
+		
 		console.log("Offset: " + getOffset(angle, targetAngle));
 		scoreChange = Math.round(timeMultiplier * (getOffset(angle, normalize(targetAngle + 180)) - 90));
 		score += scoreChange;
 		$('#score').text("Score: " + score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-
+		
 		console.log("Click valid!");
 	} else {
 		console.log("Click invalid!");
 	}
-
-	//Show point text
-
-
+	
+	
 	drawBG();
 	targetAngle = drawAntiTarget();
 });
@@ -72,16 +70,16 @@ $(window).bind('beforeunload', function() {
 
 function getOffset(angle1, angle2) {
 	var offset;
-
+	
 	if (angle1 > angle2) {
 		offset = angle1 - angle2;
 	} else {
 		offset = angle2 - angle1;
 	}
-
+	
 	while (offset > 180) {
 		offset = 360 - offset;
 	}
-
+	
 	return offset;
 }
