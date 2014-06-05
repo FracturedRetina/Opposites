@@ -1,10 +1,14 @@
 var score = 0;
 
 $(document).ready(function() {
-	if ($.cookie("score") == undefined) {
-		$.cookie("score", 0, {expires: 365});
+	//If player is new
+	if ($.cookie("highscore") == undefined && $.cookie("lowscore") == undefined) {
+		alert("Welcome! It seems that you're new here. Gameplay is simple; just click the gray ring on the spot opposite the white dot as quickly as you can.");
+		$.cookie("highscore", 0, {expires: 365});
+		$.cookie("lowscore", 0, {expires: 365});
 	} else {
-		$('#highscore').text("Highscore: " + $.cookie("score").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('#highscore').text("Highscore: " + $.cookie("highscore").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$('#lowscore').text("Lowscore: " + $.cookie("lowscore").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 	}
 });
 
@@ -15,6 +19,7 @@ $('canvas').click(function(e) {
 		Math.pow(x - centX, 2)
 		+Math.pow(y - centY, 2)
 	);
+	var scoreChange;
 
 	var angle = normalize(540 - (
 		Math.atan2(
@@ -39,7 +44,8 @@ $('canvas').click(function(e) {
 		
 
 		console.log("Offset: " + getOffset(angle, targetAngle));
-		score += Math.round(timeMultiplier * (getOffset(angle, normalize(targetAngle + 180)) - 90));
+		scoreChange = Math.round(timeMultiplier * (getOffset(angle, normalize(targetAngle + 180)) - 90));
+		score += scoreChange;
 		$('#score').text("Score: " + score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
 		console.log("Click valid!");
@@ -47,15 +53,20 @@ $('canvas').click(function(e) {
 		console.log("Click invalid!");
 	}
 
+	//Show point text
+
+
 	drawBG();
 	targetAngle = drawAntiTarget();
 });
 
 
-//Save highscore
+//Save highscore and lowscore
 $(window).bind('beforeunload', function() {
-	if (score > $.cookie("score")) {
-		$.cookie("score", score, {expires: 365});
+	if (score > $.cookie("highscore")) {
+		$.cookie("highscore", score, {expires: 365});
+	} else if (score < $.cookie("lowscore")) {
+		$.cookie("lowscore", score, {expires: 365});
 	}
 });
 
