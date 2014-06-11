@@ -64,3 +64,18 @@ function drawAntiTarget() {
 
 	return ((angle - 90) % 360);
 }
+
+function drawCross(x, y, rad) {
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = 'cyan';
+	
+	ctx.beginPath();
+	ctx.moveTo(x, y - rad);
+	ctx.lineTo(x, y + rad);
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.moveTo(x - rad, y);
+	ctx.lineTo(x + rad, y);
+	ctx.stroke();
+}
