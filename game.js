@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
 $('#cvs').click(function(e) {
-	var x = e.offsetX
+	var x = e.offsetX;
 	var y = e.offsetY;
 	var distFromCent = Math.sqrt(
 		Math.pow(x - centX, 2)
