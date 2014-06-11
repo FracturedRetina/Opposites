@@ -56,9 +56,9 @@ $('canvas, .scoreText').click(function(e) {
 			$.cookie("lowscore", score, {expires: 365});
 		}
 
-		console.log("Click valid!");
+		alert("Click valid!");
 	} else {
-		console.log("Click invalid!");
+		alert("Click invalid!");
 	}
 	scoreChanges++;
 
