@@ -13,9 +13,9 @@ $(document).ready(function() {
 	}
 });
 
-$('canvas, .scoreText').click(function(e) {
-	var x = e.clientX - $('#cvs').offset().left;
-	var y = e.clientY - $('#cvs').offset().top;
+$('#cvs').click(function(e) {
+	var x = e.offsetX
+	var y = e.offsetY;
 	var distFromCent = Math.sqrt(
 		Math.pow(x - centX, 2)
 		+Math.pow(y - centY, 2)
