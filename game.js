@@ -56,9 +56,9 @@ $('canvas, .scoreText').click(function(e) {
 			$.cookie("lowscore", score, {expires: 365});
 		}
 
-		alert("Click valid!");
+		console.log("Click valid!");
 	} else {
-		alert("Click invalid!");
+		console.log("Click invalid!");
 	}
 	scoreChanges++;
 
@@ -74,6 +74,7 @@ $('canvas, .scoreText').click(function(e) {
 
 	drawBG();
 	targetAngle = drawAntiTarget();
+	drawCross(x, y, 10);
 });
 
 function getOffset(angle1, angle2) {
