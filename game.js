@@ -64,9 +64,9 @@ $('#cvs').click(function(e) {
 
 	//Show point text
 	if (scoreChange > 0) {
-		$("body").append("<p id=\"sc" + scoreChanges + "\" class=\"scoreText green\" style=\"top: " + e.clientY + "px; left: " + e.clientX + "px;\">+" + scoreChange +  "</p>")
+		$("body").append("<p id=\"sc" + scoreChanges + "\" class=\"scoreText green\" style=\"top: " + ($('$cvs').offset().top + y) + "px; left: " + ($('$cvs').offset().left + x) + "px;\">+" + scoreChange +  "</p>")
 	} else if (scoreChange < 0) {
-		$("body").append("<p id=\"sc" + scoreChanges + "\" class=\"scoreText red\" style=\"top: " + e.clientY + "px; left: " + e.clientX + "px;\">" + scoreChange + "</p>")
+		$("body").append("<p id=\"sc" + scoreChanges + "\" class=\"scoreText red\" style=\"top: " + ($('$cvs').offset().top + y) + "px; left: " + ($('$cvs').offset().left + x) + "px;\">" + scoreChange + "</p>")
 	}
 
 	$('#sc' + scoreChanges).slideDown(400).delay(1000).slideUp(400);
