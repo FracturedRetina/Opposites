@@ -74,7 +74,6 @@ $('#cvs').click(function(e) {
 
 	drawBG();
 	targetAngle = drawAntiTarget();
-	drawCross(x, y, 10);
 });
 
 function getOffset(angle1, angle2) {
